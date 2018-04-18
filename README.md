@@ -4,6 +4,14 @@ Experimental testbed where I test various Machine Learning & AI concepts using U
 **Unity version:** 2018.1.0b13 (beta)
 **Unity ML-Agents version:** 0.3.1a
 
+## Environments
+**Rat & Cheese:** The rat (gray ball) should run to the piece of cheese (yellow cube). Agent Reward Function: 
+* +0.1 if getting closer
+* -0.05 time penalty
+* +1.0 when reaching target.
+
+![Rat & Cheese at runtime after training](Screenshots/RatCheese-Runtime02.gif)
+
 ## Project Setup
 * The [TensorflowSharp](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Background-TensorFlow.md#tensorflowsharp) plugins folder was omitted from this project due to the massive file sizes. You will need to import this set of Unity plugins yourself. You can download the TensorFlowSharp plugin as a [Unity package here](https://s3.amazonaws.com/unity-ml-agents/0.3/TFSharpPlugin.unitypackage).
 * There is currently a bug where if you use all the duplicate platforms for training, all the rats & cheese will spawn on the same platform since the initial spawn values are hard-coded and not relative to each board. regardless, it does not affect the training as they all still run independently from one another.
