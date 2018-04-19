@@ -76,6 +76,9 @@ public class BetterRatAgent : Agent
     public override void AgentAction(float[] vectorAction, string textAction)
     {
         MoveAgent(vectorAction);
+
+        // Time penalty
+        AddReward(-0.05f);
     }
 
     public override void AgentReset()
@@ -100,7 +103,10 @@ public class BetterRatAgent : Agent
         }
         if (collision.gameObject.CompareTag("wall"))
         {
-            Done();
+            //Done();
+
+            // Penalty when hitting a wall
+            AddReward(-0.1f);
         }
     }
 

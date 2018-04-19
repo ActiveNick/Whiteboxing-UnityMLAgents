@@ -5,10 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenarios/SingleRat/SingleRat.unity
-    guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
-    path: Assets/Scenarios/RatsAndCheeses/RatsAndCheeses.unity
+    path: Assets/Scenarios/RatsAndCheese/RatsAndCheese.unity
     guid: fe06b7f14c083a849ac8eb25c43a452b
   m_configObjects: {}

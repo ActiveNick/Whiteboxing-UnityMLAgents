@@ -217,7 +217,8 @@ MonoBehaviour:
     maxStep: 0
     resetOnDone: 1
     onDemandDecision: 0
-    numberOfActionsBetweenDecisions: 1
+    numberOfActionsBetweenDecisions: 4
+  myAcademyObj: {fileID: 0}
   moveSpeed: 2
   turnSpeed: 300
 --- !u!114 &114898098519875528
