@@ -78,7 +78,7 @@ public class BetterRatAgent : Agent
         MoveAgent(vectorAction);
 
         // Time penalty
-        AddReward(-0.05f);
+        AddReward(-0.005f);
     }
 
     public override void AgentReset()
@@ -106,7 +106,7 @@ public class BetterRatAgent : Agent
             //Done();
 
             // Penalty when hitting a wall
-            AddReward(-0.1f);
+            AddReward(-0.2f);
         }
     }
 
