@@ -31,11 +31,11 @@ public class RayPerception : MonoBehaviour
             endPosition = transform.TransformDirection(
                 PolarToCartesian(rayDistance, angle));
             endPosition.y = endOffset;
-            if (Application.isEditor)
-            {
+            //if (Application.isEditor)
+            //{
                 Debug.DrawRay(transform.position + new Vector3(0f, startOffset, 0f),
               endPosition, Color.red, 0.01f, true);
-            }
+            //}
             float[] subList = new float[detectableObjects.Length + 2];
             if (Physics.SphereCast(transform.position +
                                    new Vector3(0f, startOffset, 0f), 0.5f,

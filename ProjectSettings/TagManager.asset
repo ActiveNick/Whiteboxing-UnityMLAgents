@@ -7,6 +7,8 @@ TagManager:
   - cheese
   - rat
   - wall
+  - civilian
+  - resource
   layers:
   - Default
   - TransparentFX

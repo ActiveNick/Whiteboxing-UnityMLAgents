@@ -73,6 +73,10 @@
     <Compile Include="Assets\ML-Agents\Scripts\Monitor.cs" />
     <Compile Include="Assets\ML-Agents\Scripts\ResetParameters.cs" />
     <Compile Include="Assets\ML-Agents\Scripts\UnityAgentsException.cs" />
+    <Compile Include="Assets\Scenarios\Civilization\Scripts\CivAcademy.cs" />
+    <Compile Include="Assets\Scenarios\Civilization\Scripts\CivilianAgent.cs" />
+    <Compile Include="Assets\Scenarios\Civilization\Scripts\LandSpawnArea.cs" />
+    <Compile Include="Assets\Scenarios\Civilization\Scripts\Resource.cs" />
     <Compile Include="Assets\Scenarios\RatsAndCheese\Scripts\BetterRatAgent.cs" />
     <Compile Include="Assets\Scenarios\RatsAndCheese\Scripts\RatSpawningAcademy.cs" />
     <Compile Include="Assets\Scenarios\RatsAndCheese\Scripts\SpawnArea.cs" />

@@ -647,7 +647,9 @@
     <Compile Include="Assets\ML-Agents\Scripts\Monitor.cs" />
     <Compile Include="Assets\ML-Agents\Scripts\ResetParameters.cs" />
     <Compile Include="Assets\ML-Agents\Scripts\UnityAgentsException.cs" />
-    <Compile Include="Assets\Scenarios\RatsAndCheeses\Scripts\BetterRatAgent.cs" />
+    <Compile Include="Assets\Scenarios\RatsAndCheese\Scripts\BetterRatAgent.cs" />
+    <Compile Include="Assets\Scenarios\RatsAndCheese\Scripts\RatSpawningAcademy.cs" />
+    <Compile Include="Assets\Scenarios\RatsAndCheese\Scripts\SpawnArea.cs" />
     <Compile Include="Assets\Scenarios\SingleRat\Scripts\RatAgent.cs" />
     <Compile Include="Assets\Scenarios\SingleRat\Scripts\RatsAcademy.cs" />
     <Compile Include="Assets\SharedAssets\Scripts\Area.cs" />
