@@ -87,6 +87,7 @@
     <Compile Include="Assets\SharedAssets\Scripts\FlyCamera.cs" />
     <Compile Include="Assets\SharedAssets\Scripts\RandomDecision.cs" />
     <Compile Include="Assets\SharedAssets\Scripts\RayPerception.cs" />
+    <Compile Include="Assets\SharedAssets\Scripts\TrainingDuplicator.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>D:/Dev/Git/Whiteboxing-UnityMLAgents/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>

@@ -13,6 +13,8 @@ public class CivilianAgent : Agent {
     public float turnSpeed = 300;
     // Gathering speed 
     public float gatheringRate = 0.1f;
+    // Range of vision
+    public float visionRange = 5f;
 
     public enum AgentMode { exploring, gathering, building };
     public AgentMode currentMode;
@@ -35,7 +37,7 @@ public class CivilianAgent : Agent {
     public override void CollectObservations()
     {
         // Looking around with raycasts
-        float rayDistance = 5f;
+        float rayDistance = visionRange;
         float[] rayAngles = { 20f, 90f, 160f, 45f, 135f, 70f, 110f };
         string[] detectableObjects = { "resource", "civilian", "wall" };
         AddVectorObs(rayPer.Perceive(rayDistance, rayAngles, detectableObjects, 0f, -0.1f));
@@ -87,7 +89,7 @@ public class CivilianAgent : Agent {
         // Time penalty if the villager is just exploring
         if (currentMode == AgentMode.exploring)
         {
-            AddReward(-0.005f);
+            AddReward(-0.05f);
             //Debug.Log("Negative time reward logged.");
         }
     }
@@ -118,7 +120,7 @@ public class CivilianAgent : Agent {
                 if (qtty > 0f)
                 {
                     // Reward the villager for gathering a resource
-                    AddReward(0.1f);
+                    AddReward(0.2f);
                 } else
                 {
                     currentMode = AgentMode.exploring;

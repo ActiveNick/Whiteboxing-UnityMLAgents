@@ -62,6 +62,7 @@
     <Compile Include="Assets\ML-Agents\Editor\BrainEditor.cs" />
     <Compile Include="Assets\ML-Agents\Editor\MLAgentsEditModeTest.cs" />
     <Compile Include="Assets\ML-Agents\Editor\ResetParameterDrawer.cs" />
+    <Compile Include="Assets\SharedAssets\Editor\TrainingDuplicatorEditor.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>D:/Dev/Git/Whiteboxing-UnityMLAgents/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
