@@ -2,7 +2,7 @@
 Experimental testbed where I test various Machine Learning & AI concepts using Unity ML Agents. Note that this is a work in progress that I am sharing "as is" as I build and expand new ML scenarios.
 
 **Unity version:** 2018.1.0b13 (beta)
-**Unity ML-Agents version:** 0.3.1a
+**Unity ML-Agents version:** 0.3.1b
 
 ## Environments
 **Rat & Cheese (single):** The rat (gray ball) should run to the piece of cheese (yellow cube). The rat is given the relative position of the cheese in relationship to itself. Agent Reward Function: 
@@ -18,6 +18,10 @@ Experimental testbed where I test various Machine Learning & AI concepts using U
 * +1.0 when reaching a piece of cheese.
 
 ![Rat & Cheese (multiple cheese) at runtime after training](Screenshots/RatsAndCheese-Runtime03.gif)
+
+**Civilization:** The goal is to re-create an ML-based AI for an RTS-style game like Age of Empires, gathering resources, building structures, and eventually fight other units. The current iteration shows a single "villager" unit, gathering wood from nearby trees, and eventually building a farm, which costs 100 units of wood. The models included here are far from perfect and this is still very much a work in progress. Stay tuned for more updates.
+
+![Civilization/Villager at runtime after training](Screenshots/Civ-WoodGatherer-Runtime03.gif)
 
 ## Project Setup
 * The [TensorflowSharp](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Background-TensorFlow.md#tensorflowsharp) plugins folder was omitted from this project due to the massive file sizes. You will need to import this set of Unity plugins yourself. You can download the TensorFlowSharp plugin as a [Unity package here](https://s3.amazonaws.com/unity-ml-agents/0.3/TFSharpPlugin.unitypackage).

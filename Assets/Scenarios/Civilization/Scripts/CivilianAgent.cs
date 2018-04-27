@@ -94,7 +94,7 @@ public class CivilianAgent : Agent {
             // Penalize the agent for moving backwards, forcing it to move forward and use raycasts
             //AddReward(-0.001f);
 #if (UNITY_EDITOR)
-            Debug.Log("Penalized for moving backwards.");
+            //Debug.Log("Penalized for moving backwards.");
 #endif
         }
         transform.Rotate(rotateDir, Time.fixedDeltaTime * turnSpeed);
@@ -116,7 +116,7 @@ public class CivilianAgent : Agent {
             {
                 myArea.totalWood -= 100;
                 myArea.PlaceBuilding(LandSpawnArea.BuildingType.Farm, gameObject.transform.position.x, gameObject.transform.position.z);
-                AddReward(5f);
+                AddReward(10f);
                 Debug.Log("Farm built!");
             } else
             {
@@ -124,14 +124,14 @@ public class CivilianAgent : Agent {
 #if (UNITY_EDITOR)
                 Debug.Log("Not allowed to build a farm yet.");
 #endif
-                //AddReward((100 - myArea.totalWood) / 100 * -1);
+                AddReward((100 - myArea.totalWood) / 1000 * -1);
             }
         }
 
         // Time penalty if the villager is just exploring
         if (currentMode == AgentMode.exploring)
         {
-            AddReward(-0.0002f);
+            AddReward(-0.0005f);
 #if (UNITY_EDITOR)
             Debug.Log("Negative time reward logged.");
 #endif
