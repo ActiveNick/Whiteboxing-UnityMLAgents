@@ -2029,7 +2029,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1655221566246650, guid: dced69c4f728dcc449ecafb7ddbcd9ab, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dced69c4f728dcc449ecafb7ddbcd9ab, type: 2}
@@ -4661,7 +4661,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cheese: {fileID: 1468232728832242, guid: ba52a1e7a0c36e444bf7ebb7dcb9ce08, type: 2}
-  numCheese: 20
+  numCheese: 10
   range: 4.5
   HeightCheese: 0.1
   HeightRat: 0.2

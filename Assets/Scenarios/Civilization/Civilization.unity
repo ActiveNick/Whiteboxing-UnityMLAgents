@@ -251,7 +251,6 @@ MonoBehaviour:
     resetOnDone: 1
     onDemandDecision: 0
     numberOfActionsBetweenDecisions: 4
-  myAcademyObj: {fileID: 0}
   moveSpeed: 0.5
   turnSpeed: 150
   gatheringRate: 0.1
@@ -384,10 +383,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tree: {fileID: 1032057401205178, guid: 9e68567817cddb34c8f33e7fb115b67e, type: 2}
+  farm: {fileID: 0}
+  barracks: {fileID: 0}
   numTrees: 10
   range: 9
   HeightTree: 0.5
   HeightNPC: 0.2
+  totalWood: 0
 --- !u!1 &62333848
 GameObject:
   m_ObjectHideFlags: 0
@@ -558,29 +560,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 75035753}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &117151276
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b23992c8eb17439887f5e944bf04a40, type: 3}
-  m_Name: (Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
-  m_EditorClassIdentifier: 
-  broadcast: 1
-  graphModel: {fileID: 4900000, guid: 3fdd5ff7864eb6c4591294a3e4fde0e3, type: 3}
-  graphScope: 
-  graphPlaceholders: []
-  BatchSizePlaceholderName: batch_size
-  VectorObservationPlacholderName: vector_observation
-  RecurrentInPlaceholderName: recurrent_in
-  RecurrentOutPlaceholderName: recurrent_out
-  VisualObservationPlaceholderName: []
-  ActionPlaceholderName: action
-  PreviousActionPlaceholderName: prev_action
-  brain: {fileID: 2109252771}
 --- !u!1 &122696560
 GameObject:
   m_ObjectHideFlags: 0
@@ -825,6 +804,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 157074427}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &163507790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35813a1be64e144f887d7d5f15b963fa, type: 3}
+  m_Name: (Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  brain: {fileID: 2109252771}
 --- !u!1 &164179903
 GameObject:
   m_ObjectHideFlags: 0
@@ -1050,23 +1041,27 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1791580668814732, guid: 44eeebd6fd57fcd46957c9572b4ac955, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114291598015460240, guid: 44eeebd6fd57fcd46957c9572b4ac955,
+        type: 2}
+      propertyPath: farm
+      value: 
+      objectReference: {fileID: 1409853926902918, guid: 474dd5982e07d3e4da0c9d005e635645,
+        type: 2}
+    - target: {fileID: 114291598015460240, guid: 44eeebd6fd57fcd46957c9572b4ac955,
+        type: 2}
+      propertyPath: numTrees
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 114500901103587680, guid: 44eeebd6fd57fcd46957c9572b4ac955,
+        type: 2}
+      propertyPath: visionRange
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 44eeebd6fd57fcd46957c9572b4ac955, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &211004822
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35813a1be64e144f887d7d5f15b963fa, type: 3}
-  m_Name: (Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
-  m_EditorClassIdentifier: 
-  brain: {fileID: 2109252771}
 --- !u!1 &237973727
 GameObject:
   m_ObjectHideFlags: 0
@@ -1284,10 +1279,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tree: {fileID: 1032057401205178, guid: 9e68567817cddb34c8f33e7fb115b67e, type: 2}
+  farm: {fileID: 0}
+  barracks: {fileID: 0}
   numTrees: 10
   range: 9
   HeightTree: 0.5
   HeightNPC: 0.2
+  totalWood: 0
+--- !u!114 &353549300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 943466ab374444748a364f9d6c3e2fe2, type: 3}
+  m_Name: (Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  broadcast: 1
+  brain: {fileID: 0}
 --- !u!1 &360228946
 GameObject:
   m_ObjectHideFlags: 0
@@ -1855,7 +1866,6 @@ MonoBehaviour:
     resetOnDone: 1
     onDemandDecision: 0
     numberOfActionsBetweenDecisions: 4
-  myAcademyObj: {fileID: 0}
   moveSpeed: 0.5
   turnSpeed: 150
   gatheringRate: 0.1
@@ -2107,6 +2117,37 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 502811792}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &504511136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41e9bda8f3cf1492fa74926a530f6f70, type: 3}
+  m_Name: (Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  broadcast: 1
+  continuousPlayerActions:
+  - key: 119
+    index: 0
+    value: 1
+  - key: 115
+    index: 0
+    value: -1
+  - key: 97
+    index: 1
+    value: -1
+  - key: 100
+    index: 1
+    value: 1
+  - key: 102
+    index: 2
+    value: 1
+  discretePlayerActions: []
+  defaultAction: 0
+  brain: {fileID: 2109252771}
 --- !u!1 &578708505
 GameObject:
   m_ObjectHideFlags: 0
@@ -2286,6 +2327,29 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &649396238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b23992c8eb17439887f5e944bf04a40, type: 3}
+  m_Name: (Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  broadcast: 1
+  graphModel: {fileID: 4900000, guid: 913446a00cc965144b1c8569f6ec43d0, type: 3}
+  graphScope: 
+  graphPlaceholders: []
+  BatchSizePlaceholderName: batch_size
+  VectorObservationPlacholderName: vector_observation
+  RecurrentInPlaceholderName: recurrent_in
+  RecurrentOutPlaceholderName: recurrent_out
+  VisualObservationPlaceholderName: []
+  ActionPlaceholderName: action
+  PreviousActionPlaceholderName: prev_action
+  brain: {fileID: 2109252771}
 --- !u!1 &655569980
 GameObject:
   m_ObjectHideFlags: 0
@@ -2426,7 +2490,6 @@ MonoBehaviour:
     resetOnDone: 1
     onDemandDecision: 0
     numberOfActionsBetweenDecisions: 4
-  myAcademyObj: {fileID: 0}
   moveSpeed: 0.5
   turnSpeed: 150
   gatheringRate: 0.1
@@ -2565,7 +2628,6 @@ MonoBehaviour:
     resetOnDone: 1
     onDemandDecision: 0
     numberOfActionsBetweenDecisions: 4
-  myAcademyObj: {fileID: 0}
   moveSpeed: 0.5
   turnSpeed: 150
   gatheringRate: 0.1
@@ -2793,7 +2855,23 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1791580668814732, guid: 44eeebd6fd57fcd46957c9572b4ac955, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114291598015460240, guid: 44eeebd6fd57fcd46957c9572b4ac955,
+        type: 2}
+      propertyPath: farm
+      value: 
+      objectReference: {fileID: 1409853926902918, guid: 474dd5982e07d3e4da0c9d005e635645,
+        type: 2}
+    - target: {fileID: 114291598015460240, guid: 44eeebd6fd57fcd46957c9572b4ac955,
+        type: 2}
+      propertyPath: numTrees
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 114500901103587680, guid: 44eeebd6fd57fcd46957c9572b4ac955,
+        type: 2}
+      propertyPath: visionRange
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 44eeebd6fd57fcd46957c9572b4ac955, type: 2}
@@ -3015,10 +3093,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tree: {fileID: 1032057401205178, guid: 9e68567817cddb34c8f33e7fb115b67e, type: 2}
+  farm: {fileID: 0}
+  barracks: {fileID: 0}
   numTrees: 10
   range: 9
   HeightTree: 0.5
   HeightNPC: 0.2
+  totalWood: 0
 --- !u!1 &808685593
 GameObject:
   m_ObjectHideFlags: 0
@@ -3159,7 +3240,23 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1791580668814732, guid: 44eeebd6fd57fcd46957c9572b4ac955, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114291598015460240, guid: 44eeebd6fd57fcd46957c9572b4ac955,
+        type: 2}
+      propertyPath: farm
+      value: 
+      objectReference: {fileID: 1409853926902918, guid: 474dd5982e07d3e4da0c9d005e635645,
+        type: 2}
+    - target: {fileID: 114291598015460240, guid: 44eeebd6fd57fcd46957c9572b4ac955,
+        type: 2}
+      propertyPath: numTrees
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 114500901103587680, guid: 44eeebd6fd57fcd46957c9572b4ac955,
+        type: 2}
+      propertyPath: visionRange
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 44eeebd6fd57fcd46957c9572b4ac955, type: 2}
@@ -3290,7 +3387,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfe96f6b759d128469e083891d6c3f5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSteps: 10000
+  maxSteps: 20000
   trainingConfiguration:
     width: 1280
     height: 720
@@ -3307,7 +3404,7 @@ MonoBehaviour:
     resetParameters: []
   agents: []
   listArea: []
-  totalWood: 0
+  mainBoard: {fileID: 1174640465}
   resourceWoodText: {fileID: 122696562}
 --- !u!1 &837629807
 GameObject:
@@ -3704,7 +3801,23 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1791580668814732, guid: 44eeebd6fd57fcd46957c9572b4ac955, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114291598015460240, guid: 44eeebd6fd57fcd46957c9572b4ac955,
+        type: 2}
+      propertyPath: farm
+      value: 
+      objectReference: {fileID: 1409853926902918, guid: 474dd5982e07d3e4da0c9d005e635645,
+        type: 2}
+    - target: {fileID: 114291598015460240, guid: 44eeebd6fd57fcd46957c9572b4ac955,
+        type: 2}
+      propertyPath: numTrees
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 114500901103587680, guid: 44eeebd6fd57fcd46957c9572b4ac955,
+        type: 2}
+      propertyPath: visionRange
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 44eeebd6fd57fcd46957c9572b4ac955, type: 2}
@@ -3764,7 +3877,23 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1791580668814732, guid: 44eeebd6fd57fcd46957c9572b4ac955, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114291598015460240, guid: 44eeebd6fd57fcd46957c9572b4ac955,
+        type: 2}
+      propertyPath: farm
+      value: 
+      objectReference: {fileID: 1409853926902918, guid: 474dd5982e07d3e4da0c9d005e635645,
+        type: 2}
+    - target: {fileID: 114291598015460240, guid: 44eeebd6fd57fcd46957c9572b4ac955,
+        type: 2}
+      propertyPath: numTrees
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 114500901103587680, guid: 44eeebd6fd57fcd46957c9572b4ac955,
+        type: 2}
+      propertyPath: visionRange
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 44eeebd6fd57fcd46957c9572b4ac955, type: 2}
@@ -3824,7 +3953,23 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1791580668814732, guid: 44eeebd6fd57fcd46957c9572b4ac955, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114291598015460240, guid: 44eeebd6fd57fcd46957c9572b4ac955,
+        type: 2}
+      propertyPath: farm
+      value: 
+      objectReference: {fileID: 1409853926902918, guid: 474dd5982e07d3e4da0c9d005e635645,
+        type: 2}
+    - target: {fileID: 114291598015460240, guid: 44eeebd6fd57fcd46957c9572b4ac955,
+        type: 2}
+      propertyPath: numTrees
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 114500901103587680, guid: 44eeebd6fd57fcd46957c9572b4ac955,
+        type: 2}
+      propertyPath: visionRange
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 44eeebd6fd57fcd46957c9572b4ac955, type: 2}
@@ -4343,6 +4488,12 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1156931099}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1174640465 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114291598015460240, guid: 44eeebd6fd57fcd46957c9572b4ac955,
+    type: 2}
+  m_PrefabInternal: {fileID: 2001831671}
+  m_Script: {fileID: 11500000, guid: bca414fd9bce2324a8de0a64d97bfa08, type: 3}
 --- !u!1 &1240166991
 GameObject:
   m_ObjectHideFlags: 0
@@ -4515,19 +4666,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1265269359}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1281426722
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 943466ab374444748a364f9d6c3e2fe2, type: 3}
-  m_Name: (Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
-  m_EditorClassIdentifier: 
-  broadcast: 1
-  brain: {fileID: 0}
 --- !u!1 &1321591328
 GameObject:
   m_ObjectHideFlags: 0
@@ -4575,10 +4713,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tree: {fileID: 1032057401205178, guid: 9e68567817cddb34c8f33e7fb115b67e, type: 2}
+  farm: {fileID: 0}
+  barracks: {fileID: 0}
   numTrees: 10
   range: 9
   HeightTree: 0.5
   HeightNPC: 0.2
+  totalWood: 0
 --- !u!1 &1344932575
 GameObject:
   m_ObjectHideFlags: 0
@@ -4889,7 +5030,23 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1791580668814732, guid: 44eeebd6fd57fcd46957c9572b4ac955, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114291598015460240, guid: 44eeebd6fd57fcd46957c9572b4ac955,
+        type: 2}
+      propertyPath: farm
+      value: 
+      objectReference: {fileID: 1409853926902918, guid: 474dd5982e07d3e4da0c9d005e635645,
+        type: 2}
+    - target: {fileID: 114291598015460240, guid: 44eeebd6fd57fcd46957c9572b4ac955,
+        type: 2}
+      propertyPath: numTrees
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 114500901103587680, guid: 44eeebd6fd57fcd46957c9572b4ac955,
+        type: 2}
+      propertyPath: visionRange
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 44eeebd6fd57fcd46957c9572b4ac955, type: 2}
@@ -4941,10 +5098,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tree: {fileID: 1032057401205178, guid: 9e68567817cddb34c8f33e7fb115b67e, type: 2}
+  farm: {fileID: 0}
+  barracks: {fileID: 0}
   numTrees: 10
   range: 9
   HeightTree: 0.5
   HeightNPC: 0.2
+  totalWood: 0
 --- !u!1 &1497187523
 GameObject:
   m_ObjectHideFlags: 0
@@ -5063,7 +5223,6 @@ MonoBehaviour:
     resetOnDone: 1
     onDemandDecision: 0
     numberOfActionsBetweenDecisions: 4
-  myAcademyObj: {fileID: 0}
   moveSpeed: 0.5
   turnSpeed: 150
   gatheringRate: 0.1
@@ -5281,10 +5440,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tree: {fileID: 1032057401205178, guid: 9e68567817cddb34c8f33e7fb115b67e, type: 2}
+  farm: {fileID: 0}
+  barracks: {fileID: 0}
   numTrees: 10
   range: 9
   HeightTree: 0.5
   HeightNPC: 0.2
+  totalWood: 0
 --- !u!1 &1562891922
 GameObject:
   m_ObjectHideFlags: 0
@@ -5338,7 +5500,6 @@ MonoBehaviour:
     resetOnDone: 1
     onDemandDecision: 0
     numberOfActionsBetweenDecisions: 4
-  myAcademyObj: {fileID: 0}
   moveSpeed: 0.5
   turnSpeed: 150
   gatheringRate: 0.1
@@ -5651,7 +5812,23 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1791580668814732, guid: 44eeebd6fd57fcd46957c9572b4ac955, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114291598015460240, guid: 44eeebd6fd57fcd46957c9572b4ac955,
+        type: 2}
+      propertyPath: farm
+      value: 
+      objectReference: {fileID: 1409853926902918, guid: 474dd5982e07d3e4da0c9d005e635645,
+        type: 2}
+    - target: {fileID: 114291598015460240, guid: 44eeebd6fd57fcd46957c9572b4ac955,
+        type: 2}
+      propertyPath: numTrees
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 114500901103587680, guid: 44eeebd6fd57fcd46957c9572b4ac955,
+        type: 2}
+      propertyPath: visionRange
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 44eeebd6fd57fcd46957c9572b4ac955, type: 2}
@@ -5873,10 +6050,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tree: {fileID: 1032057401205178, guid: 9e68567817cddb34c8f33e7fb115b67e, type: 2}
+  farm: {fileID: 0}
+  barracks: {fileID: 0}
   numTrees: 10
   range: 9
   HeightTree: 0.5
   HeightNPC: 0.2
+  totalWood: 0
 --- !u!1 &1734824886
 GameObject:
   m_ObjectHideFlags: 0
@@ -5924,10 +6104,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tree: {fileID: 1032057401205178, guid: 9e68567817cddb34c8f33e7fb115b67e, type: 2}
+  farm: {fileID: 0}
+  barracks: {fileID: 0}
   numTrees: 10
   range: 9
   HeightTree: 0.5
   HeightNPC: 0.2
+  totalWood: 0
 --- !u!1 &1773694920
 GameObject:
   m_ObjectHideFlags: 0
@@ -6236,7 +6419,6 @@ MonoBehaviour:
     resetOnDone: 1
     onDemandDecision: 0
     numberOfActionsBetweenDecisions: 4
-  myAcademyObj: {fileID: 0}
   moveSpeed: 0.5
   turnSpeed: 150
   gatheringRate: 0.1
@@ -6681,11 +6863,6 @@ Prefab:
       propertyPath: brain
       value: 
       objectReference: {fileID: 2109252771}
-    - target: {fileID: 114500901103587680, guid: 44eeebd6fd57fcd46957c9572b4ac955,
-        type: 2}
-      propertyPath: myAcademyObj
-      value: 
-      objectReference: {fileID: 815821566}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 44eeebd6fd57fcd46957c9572b4ac955, type: 2}
   m_IsPrefabParent: 0
@@ -6742,7 +6919,6 @@ MonoBehaviour:
     resetOnDone: 1
     onDemandDecision: 0
     numberOfActionsBetweenDecisions: 4
-  myAcademyObj: {fileID: 0}
   moveSpeed: 0.5
   turnSpeed: 150
   gatheringRate: 0.1
@@ -6875,10 +7051,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tree: {fileID: 1032057401205178, guid: 9e68567817cddb34c8f33e7fb115b67e, type: 2}
+  farm: {fileID: 0}
+  barracks: {fileID: 0}
   numTrees: 10
   range: 9
   HeightTree: 0.5
   HeightNPC: 0.2
+  totalWood: 0
 --- !u!1 &2023047572
 GameObject:
   m_ObjectHideFlags: 0
@@ -6964,34 +7143,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2023047572}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &2031516489
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41e9bda8f3cf1492fa74926a530f6f70, type: 3}
-  m_Name: (Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
-  m_EditorClassIdentifier: 
-  broadcast: 1
-  continuousPlayerActions:
-  - key: 119
-    index: 0
-    value: 1
-  - key: 115
-    index: 0
-    value: -1
-  - key: 97
-    index: 1
-    value: -1
-  - key: 100
-    index: 1
-    value: 1
-  discretePlayerActions: []
-  defaultAction: 0
-  brain: {fileID: 2109252771}
 --- !u!1 &2041599879
 GameObject:
   m_ObjectHideFlags: 0
@@ -7045,7 +7196,6 @@ MonoBehaviour:
     resetOnDone: 1
     onDemandDecision: 0
     numberOfActionsBetweenDecisions: 4
-  myAcademyObj: {fileID: 0}
   moveSpeed: 0.5
   turnSpeed: 150
   gatheringRate: 0.1
@@ -7512,19 +7662,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   brainParameters:
-    vectorObservationSize: 37
-    numStackedVectorObservations: 1
-    vectorActionSize: 2
+    vectorObservationSize: 39
+    numStackedVectorObservations: 5
+    vectorActionSize: 3
     cameraResolutions: []
     vectorActionDescriptions:
-    - 
-    - 
+    - MoveZ
+    - MoveX
+    - Build
     vectorActionSpaceType: 1
     vectorObservationSpaceType: 1
   brainType: 3
   CoreBrains:
-  - {fileID: 2031516489}
-  - {fileID: 1281426722}
-  - {fileID: 211004822}
-  - {fileID: 117151276}
-  instanceID: 60560
+  - {fileID: 504511136}
+  - {fileID: 353549300}
+  - {fileID: 163507790}
+  - {fileID: 649396238}
+  instanceID: 245400

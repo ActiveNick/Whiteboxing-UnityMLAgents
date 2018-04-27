@@ -674,10 +674,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tree: {fileID: 1032057401205178, guid: 9e68567817cddb34c8f33e7fb115b67e, type: 2}
-  numTrees: 10
+  farm: {fileID: 1409853926902918, guid: 474dd5982e07d3e4da0c9d005e635645, type: 2}
+  barracks: {fileID: 0}
+  numTrees: 12
   range: 9
   HeightTree: 0.5
   HeightNPC: 0.2
+  totalWood: 0
 --- !u!114 &114500901103587680
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -696,11 +699,10 @@ MonoBehaviour:
     resetOnDone: 1
     onDemandDecision: 0
     numberOfActionsBetweenDecisions: 4
-  myAcademyObj: {fileID: 0}
   moveSpeed: 0.5
   turnSpeed: 150
   gatheringRate: 0.1
-  visionRange: 7
+  visionRange: 12
   currentMode: 0
 --- !u!114 &114704029897947426
 MonoBehaviour:

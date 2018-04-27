@@ -9,6 +9,7 @@ TagManager:
   - wall
   - civilian
   - resource
+  - farm
   layers:
   - Default
   - TransparentFX

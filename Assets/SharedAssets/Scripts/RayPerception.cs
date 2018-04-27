@@ -45,7 +45,13 @@ public class RayPerception : MonoBehaviour
                 {
                     if (hit.collider.gameObject.CompareTag(detectableObjects[i]))
                     {
-                        subList[i] = 1;
+#if (UNITY_EDITOR)
+                        if (hit.collider.gameObject.CompareTag("resource"))
+                        {
+                            Debug.Log("We can see a tree!");
+                        }
+#endif
+                            subList[i] = 1;
                         subList[detectableObjects.Length + 1] = hit.distance / rayDistance;
                         break;
                     }

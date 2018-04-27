@@ -9,13 +9,14 @@ public class CivAcademy : Academy {
     public GameObject[] agents;
     [HideInInspector]
     public LandSpawnArea[] listArea;
+    public LandSpawnArea mainBoard;
 
-    public float totalWood;
     public Text resourceWoodText;
 
     public override void AcademyReset()
     {
         ClearObjects(GameObject.FindGameObjectsWithTag("resource"));
+        ClearObjects(GameObject.FindGameObjectsWithTag("farm"));
 
         agents = GameObject.FindGameObjectsWithTag("civilian");
         listArea = FindObjectsOfType<LandSpawnArea>();
@@ -23,8 +24,6 @@ public class CivAcademy : Academy {
         {
             sa.ResetSpawnArea(agents);
         }
-
-        totalWood = 0f;
     }
 
     void ClearObjects(GameObject[] objects)
@@ -46,7 +45,8 @@ public class CivAcademy : Academy {
 
     public override void AcademyStep()
     {
-        resourceWoodText.text = string.Format(@"Wood: {0}", totalWood);
+        // We only display the resources for the first environment for debugging purposes
+        resourceWoodText.text = string.Format(@"Wood: {0:#,###.#}", mainBoard.totalWood);
     }
 
 }
