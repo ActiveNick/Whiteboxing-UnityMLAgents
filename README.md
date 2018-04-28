@@ -19,9 +19,9 @@ Experimental testbed where I test various Machine Learning & AI concepts using U
 
 ![Rat & Cheese (multiple cheese) at runtime after training](Screenshots/RatsAndCheese-Runtime03.gif)
 
-**Civilization:** The goal is to re-create an ML-based AI for an RTS-style game like Age of Empires, gathering resources, building structures, and eventually fight other units. The current iteration shows a single "villager" unit, gathering wood from nearby trees, and eventually building a farm, which costs 100 units of wood. The models included here are far from perfect and this is still very much a work in progress. Stay tuned for more updates.
+**Civilization:** The goal is to re-create an ML-based AI for an RTS-style game like Age of Empires, such as gathering resources, building structures, and eventually fight other units. The current iteration shows a single "villager" unit, gathering wood from nearby trees, and eventually building a farm, which costs 100 units of wood. The models included here are far from perfect and this is still very much a work in progress. Stay tuned for more updates.
 
-![Civilization/Villager at runtime after training](Screenshots/Civ-WoodGatherer-Runtime03.gif)
+![Civilization/Villager at runtime after training](Screenshots/Civ-WoodGatherer-Runtime03a.gif)
 
 ## Project Setup
 * The [TensorflowSharp](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Background-TensorFlow.md#tensorflowsharp) plugins folder was omitted from this project due to the massive file sizes. You will need to import this set of Unity plugins yourself. You can download the TensorFlowSharp plugin as a [Unity package here](https://s3.amazonaws.com/unity-ml-agents/0.3/TFSharpPlugin.unitypackage).
