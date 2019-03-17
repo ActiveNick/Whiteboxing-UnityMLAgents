@@ -1,49 +1,50 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using MLAgents;
 
-public class RandomDecision : MonoBehaviour, Decision
+namespace MLAgents
 {
-    BrainParameters brainParameters;
-    SpaceType actionSpaceType;
-    int actionSpaceSize;
 
-    public void Awake()
+    public class RandomDecision : Decision
     {
-        brainParameters =
-            gameObject.GetComponent<Brain>().brainParameters;
-        actionSpaceType = brainParameters.vectorActionSpaceType;
-        actionSpaceSize = brainParameters.vectorActionSize;
-    }
 
-    public float[] Decide(
-        List<float> vectorObs,
-        List<Texture2D> visualObs,
-        float reward,
-        bool done,
-        List<float> memory)
-    {
-        if (actionSpaceType == SpaceType.continuous)
+        public override float[] Decide(
+            List<float> vectorObs,
+            List<Texture2D> visualObs,
+            float reward,
+            bool done,
+            List<float> memory)
         {
-            List<float> act = new List<float>();
-
-            for (int i = 0; i < actionSpaceSize; i++)
+            if (brainParameters.vectorActionSpaceType == SpaceType.continuous)
             {
-                act.Add(2 * Random.value - 1);
-            }
+                List<float> act = new List<float>();
 
-            return act.ToArray();
+                for (int i = 0; i < brainParameters.vectorActionSize[0]; i++)
+                {
+                    act.Add(2 * Random.value - 1);
+                }
+
+                return act.ToArray();
+            }
+            else
+            {
+                float[] act = new float[brainParameters.vectorActionSize.Length];
+                for (int i = 0; i < brainParameters.vectorActionSize.Length; i++)
+                {
+                    act[i]=Random.Range(0, brainParameters.vectorActionSize[i]);
+                }
+                return act;
+            }
         }
 
-        return new float[1] { Random.Range(0, actionSpaceSize) };
-    }
-
-    public List<float> MakeMemory(
-        List<float> vectorObs,
-        List<Texture2D> visualObs,
-        float reward,
-        bool done,
-        List<float> memory)
-    {
-        return new List<float>();
+        public override List<float> MakeMemory(
+            List<float> vectorObs,
+            List<Texture2D> visualObs,
+            float reward,
+            bool done,
+            List<float> memory)
+        {
+            return new List<float>();
+        }
     }
 }

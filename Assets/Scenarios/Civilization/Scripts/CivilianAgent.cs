@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using MLAgents;
 
 public class CivilianAgent : Agent {
 
@@ -187,7 +188,9 @@ public class CivilianAgent : Agent {
         {
             currentMode = AgentMode.exploring;
             currentGatherReward = startGatherReward;
+#if (UNITY_EDITOR)
             Debug.Log("Resource we were gathering was destroyed.");
+#endif
         }
     }
 
@@ -195,7 +198,9 @@ public class CivilianAgent : Agent {
     {
         currentMode = AgentMode.exploring;
         currentGatherReward = startGatherReward;
+#if (UNITY_EDITOR)
         Debug.Log("Exited trigger area.");
+#endif
     }
 
     void OnCollisionEnter(Collision collision)

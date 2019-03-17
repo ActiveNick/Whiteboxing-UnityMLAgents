@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using MLAgents;
 
 public class RatAgent : Agent {
 
@@ -66,8 +67,8 @@ public class RatAgent : Agent {
         // Reached target
         if (distanceToTarget < 0.5f)
         {
-            Done();
             AddReward(1.0f);
+            Done();
         }
 
         // Getting closer
@@ -91,7 +92,9 @@ public class RatAgent : Agent {
         Vector3 controlSignal = Vector3.zero;
         controlSignal.x = Mathf.Clamp(vectorAction[0], -1, 1);
         controlSignal.z = Mathf.Clamp(vectorAction[1], -1, 1);
-        Debug.Log($"Action X:{controlSignal.x}, Y:{controlSignal.y}");
+#if UNITY_EDITOR
+        Debug.Log($"Action X:{controlSignal.x}, Z:{controlSignal.z}");
+#endif
         rBody.AddForce(controlSignal * speed);
     }
 }

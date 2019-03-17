@@ -1,8 +1,8 @@
 # Whiteboxing-UnityMLAgents
-Experimental testbed where I test various Machine Learning & AI concepts using Unity ML Agents. Note that this is a work in progress that I am sharing "as is" as I build and expand new ML scenarios.
+Experimental testbed where I test various Machine Learning & AI concepts using Unity ML Agents. Note that this is a work in progress that I am sharing "as is" as I build and expand new ML scenarios. I've also included the trainer_config.yaml file since the Python/Tenserflow parameters are essential to using these scenarios. Note that these scenarios, reward functions and config parameters are all experimental and very much works in progress. Feel free to file an issue here on GitHub if you have found better settings for these scenarios. This is an experimentation platform and you feedback is welcome.
 
-**Unity version:** 2018.1.0b13 (beta)
-**Unity ML-Agents version:** 0.3.1b
+**Unity version:** 2018.3.8f1
+**Unity ML-Agents version:** 0.6.0a
 
 ## Environments
 **Rat & Cheese (single):** The rat (gray ball) should run to the piece of cheese (yellow cube). The rat is given the relative position of the cheese in relationship to itself. Agent Reward Function: 
@@ -29,5 +29,4 @@ Experimental testbed where I test various Machine Learning & AI concepts using U
 
 ## Follow Me
 * Twitter: [@ActiveNick](http://twitter.com/ActiveNick)
-* Blog: [AgeofMobility.com](http://AgeofMobility.com)
 * SlideShare: [http://www.slideshare.net/ActiveNick](http://www.slideshare.net/ActiveNick)

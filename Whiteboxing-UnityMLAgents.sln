@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Whiteboxing-UnityMLAgents", "Assembly-CSharp.csproj", "{20570D72-206C-B747-D140-A14DF514FA13}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{20570D72-206C-B747-D140-A14DF514FA13}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Whiteboxing-UnityMLAgents", "Assembly-CSharp-Editor.csproj", "{82E73285-029C-764B-7E61-23B5996E39FA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{82E73285-029C-764B-7E61-23B5996E39FA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
